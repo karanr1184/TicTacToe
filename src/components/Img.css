@@ -1,0 +1,14 @@
+#crossImg{
+    margin: 5px;
+    height: 90px;
+    width: 90px;
+    mix-blend-mode: multiply;
+    overflow:hidden
+}
+#zeroImg{
+    margin: 5px;
+    height: 90px;
+    width: 70px;
+    mix-blend-mode: multiply;
+    overflow:hidden
+}

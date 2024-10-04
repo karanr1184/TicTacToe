@@ -1,0 +1,10 @@
+#resetbtn{
+    height: 43px;
+    width: 80px;
+    font-size: 20px;
+    border: 2px solid rgba(241, 110, 74, 0.424);
+    border-radius: 11px;
+    background-image: linear-gradient(to right, rgba(250, 50, 0, 0.827), rgba(253, 89, 0, 0.679));
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+}
