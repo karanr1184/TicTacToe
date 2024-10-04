@@ -1,4 +1,4 @@
-# Checkout the live application: https://tic-tac-toe-inky-pi.vercel.app/
+### Checkout the live application: https://tic-tac-toe-inky-pi.vercel.app/
 
 # Getting Started with Create React App
 
