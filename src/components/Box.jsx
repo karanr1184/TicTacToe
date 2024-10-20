@@ -8,12 +8,13 @@ var turn = 0;
 var boxes = Array(9).fill(-1);
 var lock = false;
 var count = 0;
+var temp;
 
 function handleClick(e, id) {
 	if (!lock) {
         
 		if (boxes[id] === -1) {
-            document.getElementById("title").innerText = "TIC TAC TOE Game";
+			
 			boxes[id] = turn;
 			if (turn === 1)
 				e.target.innerHTML = `<img id="crossImg" src='${crossImg}'/>`;
@@ -21,7 +22,6 @@ function handleClick(e, id) {
                 e.target.innerHTML = `<img id="zeroImg" src='${zeroImg}'/>`;
 
             count+=1;
-            console.log(count);
 
 			if (
 				(boxes[0] !== -1 &&
@@ -33,14 +33,17 @@ function handleClick(e, id) {
 				(boxes[6] !== -1 && (boxes[6] === boxes[4] && boxes[4] === boxes[2]))
 			) {
 				lock = true;
-				document.getElementById("title").innerText = (turn) ? "X wins!" : "0 wins!";
+				document.getElementById("title").innerText = "Player " + temp + " wins!";
                 boxes = Array(9).fill(-1);
 			} else {
 				turn = 1 - turn;
+				temp = turn + 1
+            	document.getElementById("title").innerHTML = `<i>Let's</i> Tic Tac Toe (Player ` + temp + `'s Turn)` ;
 			}
 
             if(!lock && count === 9){
                 document.getElementById("title").innerText = "Tie! Please restart the game.";
+				lock = true;
                 boxes = Array(9).fill(-1);
             }
 		}
@@ -48,8 +51,10 @@ function handleClick(e, id) {
             document.getElementById("title").innerText = "Please choose different position";
         }
 	} else {
-		document.getElementById("title").innerText =
-			turn + " wins. Please restart game.";
+		if(count === 9)
+			document.getElementById("title").innerText = "Tie! Please restart the game.";
+		else
+			document.getElementById("title").innerText ="Player " + temp + " wins. Please restart game.";
 	}
     console.log(boxes);
 }

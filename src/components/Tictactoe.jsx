@@ -4,11 +4,9 @@ import Reset from "./Reset";
 import "./Tictactoe.css";
 
 function Tictactoe() {
-
-
 	return (
 		<div id="game">
-			<h1 id="title">TIC TAC TOE Game</h1>
+			<h1 id="title"><i>Let's</i> Tic Tac Toe (Player 1's Turn)</h1>
             <Playarea />
             <Reset />
 		</div>
